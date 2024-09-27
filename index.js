@@ -1,23 +1,38 @@
 const express = require("express") // impor modul express
 const app = express() // inisialisasi express
-const port = 3000 // port
+const port = 3001 // port
+
+app.set('view engine', 'ejs');
 
 // route /
 app.get("/", (req, res) => {
     // res.send("Hello");
-    res.sendFile(__dirname + "/index.html")
+    // res.sendFile(__dirname + "/index.html")
+
+    const berita = [{
+        judul: "Berita 1",
+        isi: "Isi Berita 1"
+    },
+    {
+        judul: "Berita 2",
+        isi: "Isi Berita 2"
+
+    }]
+    res.render('index', {title: 'Halaman Home', berita});
 });
 
 // route /about
 app.get("/about", (req, res) => {
     // res.send("About Us");
-    res.sendFile(__dirname + "/about.html");
+    // res.sendFile(__dirname + "/about.html");
+    res.render('about', {title: 'Halaman About'});
 });
 
 // route /contact
 app.get("/contact", (req, res) => {
     // res.send("Contact Us");
-    res.sendFile(__dirname + "/Contact.html");
+    // res.sendFile(__dirname + "/Contact.html");
+    res.render('contact', {title: 'Halaman Contact'});
 });
 
 // route / mahasiswa
@@ -47,6 +62,43 @@ app.get("/dosen", (req, res) => {
         ]
     })
 });
+
+// route /prodi
+app.get("/prodi", (req, res) => {
+    const prodi = [{
+        namaProdi: "Sistem Informasi",
+        Fakultas: "FIKR",
+        Singkatan: "SI"
+    },
+    {
+        namaProdi: "Informatika",
+        Fakultas: "FIKR",
+        Singkatan: "IF"
+
+    },
+    {
+        namaProdi: "Teknik Elektro",
+        Fakultas: "FIKR",
+        Singkatan: "TE"
+    },
+    {
+        namaProdi: "Manajemen Informatika",
+        Fakultas: "FIKR",
+        Singkatan: "MI"
+    },
+    {
+        namaProdi: "Manajemen",
+        Fakultas: "FEB",
+        Singkatan: "MJ"
+    },
+    {
+        namaProdi: "Akuntansi",
+        Fakultas: "FEB",
+        Singkatan: "AK"
+    }]
+    res.render('prodi', {title: 'Halaman Prodi', prodi});
+});
+
 
 
 //handle route yang tidak terdaftar
