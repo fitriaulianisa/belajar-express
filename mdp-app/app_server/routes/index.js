@@ -8,7 +8,7 @@ const mainController = require('../controllers/mainControllers')
 router.get('/', mainController.index)
 router.get('/about', mainController.about)
 router.get('/contact', mainController.contact)
-router.get('/prodi', mainController.prodi)
+
 // /* GET home page. */
 // // router.get('/', function(req, res, next) {
 //   // res.render('index', { title: 'Express' });
