@@ -1,29 +1,13 @@
-const Fakultas = require("../models/fakultas");
+const express = require("express");
 
-const getAllFakultas = async (req, res) => {
+const router= express.Router();
 
-};
+const fakultasController = require("../controllers/fakultasController");
 
-const getFakultasById = async (req, res) => {
+router.get("/", fakultasController.getAllFakultas);
+router.post("/", fakultasController.cretaeFakultas);
+router.get("/:id", fakultasController.getFakultasById);
+router.put("/:id", fakultasController.updateFakultas);
+router.delete("/:id", fakultasController.deleteFakultas);
 
-};
-
-const cretaeFakultas = async (req, res) => {
-
-};
-
-const updateFakultas = async (req, res) => {
-
-};
-
-const deleteFakultas = async (req, res) => {
-
-};
-
-module.exports = {
-    getAllFakultas,
-    cretaeFakultas,
-    getFakultasById,
-    updateFakultas,
-    deleteFakultas,
-};
+module.exports = router;

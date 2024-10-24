@@ -12,11 +12,11 @@ const fakultasSchema = new mongoose.Schema({
         trim: true,
     },
     createdAt: {
-        type: String,
-        default: DataTransfer.now,
+        type: Date,
+        default: Date.now,
     },
-})
+});
 
 const Fakultas = mongoose.model("Fakultas", fakultasSchema);
 
-model.exports = Fakultas;
+module.exports = Fakultas;
