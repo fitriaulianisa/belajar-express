@@ -43,12 +43,16 @@ const updateFakultas = async (req, res) => {
             return res.status(404).json({ message: "Fakultas not found" });
 
         if (req.body.nama != null){
+            fakultas.nama = req.body.nama;
+        }
+
+        if (req.body.singkatan != null){
             fakultas.singkatan = req.body.singkatan;
         }
 
-        const updateFakultas = await fakultas.save();
+        const updatedFakultas = await fakultas.save();
 
-        res.status(200).json(updateFakultas);
+        res.status(200).json(updatedFakultas);
     } catch (err) {
         res.status(400).json({message: err.message});
     }
