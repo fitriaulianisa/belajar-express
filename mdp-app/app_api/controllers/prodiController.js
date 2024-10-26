@@ -58,7 +58,7 @@ const updateProdi = async (req, res) => {
 
         const updateProdi = await prodi.save();
 
-        res.status(200).json(updatedProdi);
+        res.status(200).json(updateProdi);
     } catch (err) {
         res.status(400).json({message: err.message});
     }

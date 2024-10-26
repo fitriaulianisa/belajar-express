@@ -23,6 +23,6 @@ const prodiSchema = new mongoose.Schema({
     }
 });
 
-const Prodi = mongoose.model("Fakultas", prodiSchema);
+const Prodi = mongoose.model("Prodi", prodiSchema);
 
 module.exports = Prodi;
