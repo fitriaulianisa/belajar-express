@@ -21,5 +21,4 @@ const contact = (req, res) => {
 }
 
 
-
 module.exports = {index, about, contact}
