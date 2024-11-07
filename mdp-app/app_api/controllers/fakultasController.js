@@ -27,9 +27,9 @@ const createFakultas = async (req, res) => {
         singkatan: req.body.singkatan,
     })
     try {
-        const newfakultas = await fakultas.save();
+        const newFakultas = await fakultas.save();
 
-        res.status(200).json(newfakultas);
+        res.status(200).json(newFakultas);
     } catch (err) {
         res.status(400).json({message: err.message});
     }

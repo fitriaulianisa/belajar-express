@@ -4,16 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const expressLayout = require("express-ejs-layouts");
-
 const connectDB = require("./app_api/models/db");
-var indexRouter = require('./app_server/routes/index');
-const fakultasRouter = require("./app_server/routes/fakultas")
-const prodiRouter = require("./app_server/routes/prodi")
-var usersRouter = require('./app_server/routes/users');
-var prodiPageRouter = require('./app_server/routes/prodi');
-// const fakultasRouter = require("./app_api/routes/fakultas");
-const prodiApiRouter = require("./app_api/routes/prodi");
 
+var indexRouter = require('./app_server/routes/index');
+// var prodiRouter = require("./app_server/routes/prodi");
+var usersRouter = require('./app_server/routes/users');
+const fakultasRouterApi = require("./app_api/routes/fakultas")
+
+// const prodiPageRouter = require('./app_server/routes/prodi');
+const fakultasRouter = require("./app_server/routes/fakultas");
+const prodiRouter = require("./app_server/routes/prodi");
+const prodiRouterApi = require("./app_api/routes/prodi");
 
 var app = express();
 
@@ -31,10 +32,10 @@ app.use(expressLayout);
 app.use('/', indexRouter);
 app.use("/fakultas", fakultasRouter);
 app.use('/users', usersRouter);
-app.use('/prodi', prodiPageRouter);
+app.use('/prodi', prodiRouter);
 //API
-app.use("/api/fakultas", fakultasRouter);
-app.use("/api/prodi", prodiApiRouter);
+app.use("/api/fakultas", fakultasRouterApi);
+app.use("/api/prodi", prodiRouterApi);
 
 connectDB();
 // catch 404 and forward to error handler
