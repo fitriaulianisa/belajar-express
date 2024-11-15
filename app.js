@@ -16,6 +16,9 @@ const fakultasRouter = require("./app_server/routes/fakultas");
 const prodiRouter = require("./app_server/routes/prodi");
 const prodiRouterApi = require("./app_api/routes/prodi");
 
+const authRouterApi = require("./app_api/routes/auth");
+require("dotenv").config();
+
 var app = express();
 
 // view engine setup
@@ -36,6 +39,7 @@ app.use('/prodi', prodiRouter);
 //API
 app.use("/api/fakultas", fakultasRouterApi);
 app.use("/api/prodi", prodiRouterApi);
+app.use("/api/auth", authRouterApi);
 
 connectDB();
 // catch 404 and forward to error handler
