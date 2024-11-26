@@ -7,7 +7,7 @@ const getAllFakultas = async (req, res) => {
     } catch (err) {
         res.status(500).json({message: err.message});
     }
-}
+};
 
 const getFakultasById = async (req, res) => {
     try {
@@ -19,7 +19,7 @@ const getFakultasById = async (req, res) => {
     } catch (err) {
         res.status(500).json({message: err.message});
     }
-}
+};
 
 const createFakultas = async (req, res) => {
     const fakultas = new Fakultas({
@@ -33,7 +33,7 @@ const createFakultas = async (req, res) => {
     } catch (err) {
         res.status(400).json({message: err.message});
     }
-}
+};
 
 const updateFakultas = async (req, res) => {
     try {
@@ -56,7 +56,7 @@ const updateFakultas = async (req, res) => {
     } catch (err) {
         res.status(400).json({message: err.message});
     }
-}
+};
 
 const deleteFakultas = async (req, res) => {
     try {

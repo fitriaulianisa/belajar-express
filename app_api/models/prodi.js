@@ -14,7 +14,7 @@ const prodiSchema = new mongoose.Schema({
     fakultas_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Fakultas",
-        required: true,
+        required: false,
     },
 
     createdAt: {

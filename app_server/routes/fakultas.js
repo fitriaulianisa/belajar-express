@@ -6,6 +6,6 @@ const fakultasController = require('../controllers/fakultasController');
 
 router.get('/', fakultasController.index)
 
-// router.post("/store", fakultasController.store);
+router.post("/store", fakultasController.store);
 
 module.exports = router;

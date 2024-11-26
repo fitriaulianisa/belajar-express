@@ -13,7 +13,7 @@ const mahasiswaSchema = new mongoose.Schema({
     prodi_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Prodi",
-        required: true,
+        required: false,
     },
     jenis_kelamin: {
         type: String,
