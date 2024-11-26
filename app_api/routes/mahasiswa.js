@@ -2,7 +2,7 @@ const express = require("express");
 
 const router= express.Router();
 
-const mahasiswaController = require("../controllers/fakultasController");
+const mahasiswaController = require("../controllers/mahasiswaController");
 const upload = require ("../middleware/uploadMiddleware");
 
 // impor middleware auth dan role
