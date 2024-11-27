@@ -18,7 +18,7 @@ exports.register = async (req, res) => {
         // proses token
         const payload = { userId: user.id, role: user.role };
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-            expiresIn: "5h" // masa berlaku token i jam
+            expiresIn: "1h" // masa berlaku token 1 jam
         });
 
         res.json({ token }) // kirim token sebagai response
@@ -26,7 +26,7 @@ exports.register = async (req, res) => {
         res.status(500).json({ message: error.message});
 
     }
-}
+};
 
 // fungsi login
 exports.login = async (req, res) => {
@@ -47,12 +47,12 @@ exports.login = async (req, res) => {
         // buat token jwt
         const payload = { userId: user.id, role: user.role};
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-            expiresIn: "5h" // masa berlaku token 5 jam
+            expiresIn: "1h" // masa berlaku token 1 jam
         });
 
         res.json({ token }) // kirim token sebagai response
   
-    } catch (error){
+    }   catch (error){
         res.status(500).json({ message: error.message});
     }
 };
