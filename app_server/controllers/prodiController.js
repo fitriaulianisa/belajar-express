@@ -4,7 +4,7 @@ const index = async (req, res) => {
     try{
 
         const response = await axios.get(
-            "https://belajar-express-one.vercel.app/api/prodi"
+            "https://belajar-express-7w9g.vercel.app/api/prodi"
         );
         const prodi = response.data;
 

@@ -4,7 +4,7 @@ const index = async (req, res) => {
     try{
 
         const response = await axios.get(
-            "https://belajar-express-one.vercel.app/api/fakultas"
+            "https://belajar-express-7w9g.vercel.app/api/fakultas"
         );
         const fakultas = response.data;
 
@@ -24,7 +24,7 @@ const store = async (req, res) => {
     const { nama, singkatan } = req.body;
     try {
       const response = await fetch(
-        "https://belajar-express-one.vercel.app/api/fakultas",
+        "https://belajar-express-7w9g.vercel.app/api/fakultas",
         {
           method: "POST",
           headers: {

@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const expressLayout = require("express-ejs-layouts");
-// const cors = require("cors"); // import cors
+
+const cors = require("cors"); // import cors
 const connectDB = require("./app_api/models/db");
 
 var indexRouter = require('./app_server/routes/index');
@@ -33,6 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayout);
+app.use(cors()); // Gunakan middleware cors
 
 app.use('/', indexRouter);
 app.use("/fakultas", fakultasRouter);
